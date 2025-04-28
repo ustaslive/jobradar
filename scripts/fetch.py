@@ -42,7 +42,7 @@ def load_config(path: Path) -> AppConfig:
         AppConfig: An instance of AppConfig with the loaded configuration.
     Raises:
         click.ClickException: If the file cannot be read
-        or the YAML is invalid.
+                                or the YAML is invalid.
     """
     try:
         data = yaml.safe_load(path.read_text(encoding="utf-8"))
