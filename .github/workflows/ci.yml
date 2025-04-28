@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt
+          pip install black flake8 pytest
+      - name: Lint
+        run: |
+          source .venv/bin/activate
+          black --check .
+          flake8 .
+      - name: Test
+        run: |
+          source .venv/bin/activate
+          pytest --maxfail=1 --disable-warnings -q

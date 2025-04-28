@@ -1,7 +1,16 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.pyo
 *$py.class
+
+# Файлы окружения
+.env
+
+
+# База данных SQLite
+*.sqlite
+*.sqlite3
 
 # C extensions
 *.so
@@ -130,6 +139,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.venv3.11/
 env/
 venv/
 ENV/

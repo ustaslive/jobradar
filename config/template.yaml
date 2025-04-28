@@ -1,0 +1,12 @@
+# Database parameters
+# db_path: path to the sqlite file
+db_path: jobs.sqlite
+
+# LLM server parameters
+llm_endpoint: http://localhost:11434
+
+# List of RSS/Atom feeds for job monitoring
+feeds:
+  - https://example.com/rss
+  - https://another.com/atom
+
