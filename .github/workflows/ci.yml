@@ -24,7 +24,7 @@ jobs:
         run: |
           source .venv/bin/activate
           black --check .
-          flake8 .
+          flake8 . --exclude=.venv,__pycache__,build,dist
       - name: Test
         run: |
           source .venv/bin/activate
